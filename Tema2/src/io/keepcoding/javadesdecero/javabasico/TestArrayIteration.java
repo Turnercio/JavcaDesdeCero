@@ -16,8 +16,11 @@ public class TestArrayIteration {
 		stringList.add("Seis");
 		stringList.add("Siete");
 		
-		for (String element : stringList) {
-			System.out.println(element);
+		for (int i = 0; i<stringList.size(); i++) {
+			System.out.println(stringList.get(i));
+		
+		//for (String element : stringList) {
+			//System.out.println(element);
 		}
 	}
 
