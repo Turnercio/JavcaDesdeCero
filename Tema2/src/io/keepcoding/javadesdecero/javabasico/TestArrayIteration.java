@@ -6,8 +6,50 @@ public class TestArrayIteration {
 	
 	public static void main(String [] args) {
 		
-		ArrayList<String> stringList = new ArrayList<>();
+		testArrayList();
+		testWhile();	
+		testDoWhile();
+		}
+	
+	
+	public static void testWhile() {
+		ArrayList<Integer> list = new ArrayList<>();
 		
+		list.add(1);
+		list.add(2);
+		
+		int i = 0;
+		while (i < list.size()) {
+			System.out.println(list.get(i));
+			i++;
+		}
+		
+		//i = 0;
+		//while ( i< list.size())
+	}
+	
+	public static void testDoWhile() {
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		list.add(1);
+		list.add(2);		
+		
+		int i = 0;
+		if (list.size()>0) {
+			do {
+			System.out.println(list.get(i));
+			i++;
+		} while ( i < list.size());
+			
+		}
+		
+	}
+	
+	
+	public static void testArrayList() {
+	
+	ArrayList<String> stringList = new ArrayList<>();
+	
 		stringList.add("Uno");
 		stringList.add("Dos");
 		stringList.add("Tres");
@@ -23,5 +65,4 @@ public class TestArrayIteration {
 			//System.out.println(element);
 		}
 	}
-
 }
