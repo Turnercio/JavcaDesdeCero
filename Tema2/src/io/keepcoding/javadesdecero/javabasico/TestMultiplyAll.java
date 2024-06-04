@@ -81,7 +81,7 @@ public class TestMultiplyAll {
 			listaResultado.add(transformString(elemento));
 		}
 		
-			3
+			
 	}
 	public static String transformString(String element) {
 		
