@@ -6,7 +6,7 @@ public class BankAccount {
 	private String surname;
 	private int pass;
 	private double balance;
-	private boolean isLogged = false;
+	private boolean isLogged;
 	
 	public BankAccount(
 			String dni,
@@ -27,16 +27,33 @@ public class BankAccount {
 			String dni,
 			int pass
 	) {
-		this.isLogged = this.dni == dni &&
+		this.isLogged = this.dni.equals(dni) &&
 				this.pass == pass;
 		return isLogged;
 	}
 	
-	
-	public void getCash(int quantity) {
-		if (isLogged) {
+	/**
+	 * Si puede, deduce el balance y devuelve el resultado
+	 * @param quantity Cantidad a descontar
+	 * @return Si ha tenido éxito o no
+	 */
+	public boolean getCash(int quantity) {
+		boolean hasSuccess = false;
+		if (isLogged && (balance-quantity >=0)) {
+			hasSuccess = true;
 			balance -= quantity;
 		}
+		
+		return hasSuccess;
+	}
+	
+	public boolean income(int quantity) {
+		boolean hasSuccess = false;
+		if (isLogged) {
+			hasSuccess = true;
+			balance += quantity;
+		}
+		return hasSuccess;
 	}
 	
 	// Getters y setters
@@ -83,6 +100,13 @@ public class BankAccount {
 	
 	public boolean isLogged() {
 		return isLogged;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format(
+				"DNI: %s, Name: %s, Surname: %s, Balance: %s",
+				dni, name, surname, Double.toString(balance));
 	}
 	
 	/* opción sin devolver el estado

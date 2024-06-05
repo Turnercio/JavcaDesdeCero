@@ -1,5 +1,6 @@
 package io.keepcoding.javadesdecero.bank;
 
+
 import java.util.Scanner;
 
 import io.keepcoding.javadesdecero.bank.model.BankAccount;
@@ -33,10 +34,15 @@ public class MainBank {
 		
 		// Get Cash
 		account.getCash(50);
+		System.out.println("Current balance: " + account);
 		
 		// Get Data -> showInfo()
+		System.out.println(account.toString());
 		
 		// income
+		account.income(20);
+		System.out.println("Current balance: " + account.getBalance());
+		
 		
 	}
 }
